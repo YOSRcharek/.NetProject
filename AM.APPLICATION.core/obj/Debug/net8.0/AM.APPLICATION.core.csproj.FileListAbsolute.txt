@@ -1,0 +1,11 @@
+C:\Users\yosry\source\repos\AM\AM.APPLICATION.core\bin\Debug\net8.0\AM.APPLICATION.core.deps.json
+C:\Users\yosry\source\repos\AM\AM.APPLICATION.core\bin\Debug\net8.0\AM.APPLICATION.core.dll
+C:\Users\yosry\source\repos\AM\AM.APPLICATION.core\bin\Debug\net8.0\AM.APPLICATION.core.pdb
+C:\Users\yosry\source\repos\AM\AM.APPLICATION.core\obj\Debug\net8.0\AM.APPLICATION.core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\yosry\source\repos\AM\AM.APPLICATION.core\obj\Debug\net8.0\AM.APPLICATION.core.AssemblyInfoInputs.cache
+C:\Users\yosry\source\repos\AM\AM.APPLICATION.core\obj\Debug\net8.0\AM.APPLICATION.core.AssemblyInfo.cs
+C:\Users\yosry\source\repos\AM\AM.APPLICATION.core\obj\Debug\net8.0\AM.APPLICATION.core.csproj.CoreCompileInputs.cache
+C:\Users\yosry\source\repos\AM\AM.APPLICATION.core\obj\Debug\net8.0\AM.APPLICATION.core.dll
+C:\Users\yosry\source\repos\AM\AM.APPLICATION.core\obj\Debug\net8.0\refint\AM.APPLICATION.core.dll
+C:\Users\yosry\source\repos\AM\AM.APPLICATION.core\obj\Debug\net8.0\AM.APPLICATION.core.pdb
+C:\Users\yosry\source\repos\AM\AM.APPLICATION.core\obj\Debug\net8.0\ref\AM.APPLICATION.core.dll
