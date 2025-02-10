@@ -9,3 +9,4 @@ C:\Users\yosry\source\repos\AM\AM.APPLICATION.core\obj\Debug\net8.0\AM.APPLICATI
 C:\Users\yosry\source\repos\AM\AM.APPLICATION.core\obj\Debug\net8.0\refint\AM.APPLICATION.core.dll
 C:\Users\yosry\source\repos\AM\AM.APPLICATION.core\obj\Debug\net8.0\AM.APPLICATION.core.pdb
 C:\Users\yosry\source\repos\AM\AM.APPLICATION.core\obj\Debug\net8.0\ref\AM.APPLICATION.core.dll
+C:\Users\yosry\source\repos\AM\AM.APPLICATION.core\obj\Debug\net8.0\AM.APPLICATION.core.sourcelink.json

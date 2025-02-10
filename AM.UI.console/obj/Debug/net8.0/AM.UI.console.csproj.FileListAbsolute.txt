@@ -16,3 +16,4 @@ C:\Users\yosry\source\repos\AM\AM.UI.console\obj\Debug\net8.0\refint\AM.UI.conso
 C:\Users\yosry\source\repos\AM\AM.UI.console\obj\Debug\net8.0\AM.UI.console.pdb
 C:\Users\yosry\source\repos\AM\AM.UI.console\obj\Debug\net8.0\AM.UI.console.genruntimeconfig.cache
 C:\Users\yosry\source\repos\AM\AM.UI.console\obj\Debug\net8.0\ref\AM.UI.console.dll
+C:\Users\yosry\source\repos\AM\AM.UI.console\obj\Debug\net8.0\AM.UI.console.sourcelink.json

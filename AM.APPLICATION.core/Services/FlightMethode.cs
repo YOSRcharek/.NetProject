@@ -85,6 +85,45 @@ namespace AM.APPLICATION.core.Services
                 Console.WriteLine($"Aucun vol trouvé pour {filterType} = {filterValue}.");
             }
         }
+
+        public void ShowFlightDetails(Plane plane)
+        {
+            var flightDetails = flights
+                .Where(f => f.Plane == plane)
+                .Select(f => new { f.FlightDate, f.Destination });
+
+            Console.WriteLine($"Vols pour l'avion {plane.PlaneId} :");
+            foreach (var detail in flightDetails)
+            {
+                Console.WriteLine($"Date : {detail.FlightDate}, Destination : {detail.Destination}");
+            }
+        }
+        public int ProgrammedFlightNumber(DateTime startDate)
+        {
+            return flights.Count(f => f.FlightDate >= startDate && f.FlightDate < startDate.AddDays(7));
+        }
+
+        public double DurationAverage(string destination)
+        {
+            return flights
+                .Where(f => f.Destination.Equals(destination, StringComparison.OrdinalIgnoreCase))
+                .Average(f => f.EstimatedDuration);
+        }
+
+        public List<Flight> OrderedDurationFlights()
+        {
+            return flights.OrderByDescending(f => f.EstimatedDuration).ToList();
+        }
+        public List<Passenger> SeniorTravellers(Flight flight)
+        {
+            return flight.Passengers
+                .Where(p => p is Traveller)
+                .OrderByDescending(p => p.BirthDate)
+                .Take(3)
+                .ToList();
+        }
+
+
     }
 
 }
