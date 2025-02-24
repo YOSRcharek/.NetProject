@@ -88,41 +88,68 @@ namespace AM.APPLICATION.core.Services
 
         public void ShowFlightDetails(Plane plane)
         {
-            var flightDetails = flights
-                .Where(f => f.Plane == plane)
-                .Select(f => new { f.FlightDate, f.Destination });
+            var query = from f in flights
+                        where f.Plane == plane
+                        select new { f.FlightDate, f.Destination };
 
             Console.WriteLine($"Vols pour l'avion {plane.PlaneId} :");
-            foreach (var detail in flightDetails)
+            foreach (var detail in query)
             {
                 Console.WriteLine($"Date : {detail.FlightDate}, Destination : {detail.Destination}");
             }
         }
+
         public int ProgrammedFlightNumber(DateTime startDate)
         {
-            return flights.Count(f => f.FlightDate >= startDate && f.FlightDate < startDate.AddDays(7));
+            var query = from f in flights
+                        where f.FlightDate >= startDate && f.FlightDate < startDate.AddDays(7)
+                        select f;
+            return query.Count();
         }
 
         public double DurationAverage(string destination)
         {
-            return flights
-                .Where(f => f.Destination.Equals(destination, StringComparison.OrdinalIgnoreCase))
-                .Average(f => f.EstimatedDuration);
+            var query = from f in flights
+                        where f.Destination.Equals(destination, StringComparison.OrdinalIgnoreCase)
+                        select f.EstimatedDuration;
+            return query.Average();
         }
 
-        public List<Flight> OrderedDurationFlights()
-        {
-            return flights.OrderByDescending(f => f.EstimatedDuration).ToList();
-        }
-        public List<Passenger> SeniorTravellers(Flight flight)
-        {
-            return flight.Passengers
-                .Where(p => p is Traveller)
-                .OrderByDescending(p => p.BirthDate)
-                .Take(3)
-                .ToList();
+        public IEnumerable<Flight> OrderedDurationFlights()
+        { //LINQ
+
+           /* return from f in flights
+                   orderby f.EstimatedDuration descending
+                   select f;
+           */
+            //LAMBDA
+            return flights.OrderByDescending(f => f.EstimatedDuration);    
         }
 
+
+        public IEnumerable<Traveller> SeniorTravellers(Flight flight)
+        {
+            return (from f in flight.Passengers.OfType<Traveller>()
+                         orderby f.BirthDate 
+                         select f).Take(3);
+   
+        }
+
+        public IEnumerable<IGrouping<string, Flight>>DestinationGroupedFlights()
+        {
+            var query = from f in flights
+                        group f by f.Destination;
+                  
+            foreach (var group in query)
+            {
+                Console.WriteLine($"Destination {group.Key}");
+                foreach (var flight in group)
+                {
+                    Console.WriteLine($"Décollage : {flight.FlightDate}");
+                }
+            }
+            return query;
+        }
 
     }
 

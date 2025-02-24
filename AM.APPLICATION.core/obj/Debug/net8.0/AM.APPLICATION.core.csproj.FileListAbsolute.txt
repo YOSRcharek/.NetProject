@@ -10,3 +10,6 @@ C:\Users\yosry\source\repos\AM\AM.APPLICATION.core\obj\Debug\net8.0\refint\AM.AP
 C:\Users\yosry\source\repos\AM\AM.APPLICATION.core\obj\Debug\net8.0\AM.APPLICATION.core.pdb
 C:\Users\yosry\source\repos\AM\AM.APPLICATION.core\obj\Debug\net8.0\ref\AM.APPLICATION.core.dll
 C:\Users\yosry\source\repos\AM\AM.APPLICATION.core\obj\Debug\net8.0\AM.APPLICATION.core.sourcelink.json
+C:\Users\yosry\source\repos\AM\AM.APPLICATION.core\bin\Debug\net8.0\AM.APPLICATION.core.runtimeconfig.json
+C:\Users\yosry\source\repos\AM\AM.APPLICATION.core\obj\Debug\net8.0\AM.APPLICATION.core.csproj.AssemblyReference.cache
+C:\Users\yosry\source\repos\AM\AM.APPLICATION.core\obj\Debug\net8.0\AM.APPLICATION.core.genruntimeconfig.cache

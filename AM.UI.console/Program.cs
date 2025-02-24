@@ -48,26 +48,32 @@ Console.WriteLine($"Nombre de vols cette semaine : {nbVols}");
 double moyenne = service.DurationAverage("Paris");
 Console.WriteLine($"Durée moyenne des vols pour Paris : {moyenne} minutes");
 
-// Test OrderedDurationFlights
-var orderedFlights = service.OrderedDurationFlights();
-Console.WriteLine("Vols triés par durée estimée (du plus long au plus court) :");
-foreach (var flight in orderedFlights)
+Console.WriteLine("TES*****************************");
+// 1. Tester OrderedDurationFlights
+Console.WriteLine("=== Ordered Duration Flights ===");
+foreach (var flight in service.OrderedDurationFlights())
 {
-    Console.WriteLine(flight.ToString());
+    Console.WriteLine($"Flight to {flight.Destination}, Duration: {flight.EstimatedDuration} min");
 }
 
-// Sélection d'un vol existant pour tester SeniorTravellers
-Flight myFlight = service.flights.FirstOrDefault();
-if (myFlight != null)
+// 2. Tester SeniorTravellers
+Console.WriteLine("\n=== Senior Travellers ===");
+Flight firstFlight = service.flights[0]; // Sélectionner un vol avec des passagers
+foreach (var t in service.SeniorTravellers(firstFlight))
 {
-    var seniors = service.SeniorTravellers(myFlight);
-    Console.WriteLine("Les 3 passagers les plus âgés du vol :");
-    foreach (var passenger in seniors)
+    Console.WriteLine($"Traveller: {t.FirstName}, BirthDate: {t.BirthDate.ToShortDateString()}");
+}
+
+// 3. Tester DestinationGroupedFlights
+Console.WriteLine("\n=== Destination Grouped Flights ===");
+foreach (var group in service.DestinationGroupedFlights())
+{
+    Console.WriteLine($"\nDestination: {group.Key}");
+    foreach (var flight in group)
     {
-        Console.WriteLine(passenger.ToString());
+        Console.WriteLine($"Décollage : {flight.FlightDate}");
     }
 }
-else
-{
-    Console.WriteLine("Aucun vol disponible pour tester SeniorTravellers.");
-}
+//Extensionnnn
+pass.UpperFullName();
+Console.WriteLine($"{pass.LastName} {pass.FirstName}");

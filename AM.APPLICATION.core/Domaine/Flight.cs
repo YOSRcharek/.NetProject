@@ -25,6 +25,7 @@ namespace AM.APPLICATION.core.Domaine
         public String Destination { get; set; }
         public DateTime AffectiveArrival { get; set; }
         public DateTime FlightDate { get; set; }
+        public string AirlineLogo { get; set; }
         //property navigation
         public Plane  Plane { get; set; }
         public ICollection<Passenger> Passengers { get; set; }
